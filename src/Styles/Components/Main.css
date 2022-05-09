@@ -1,0 +1,13 @@
+.Main {
+    margin-left: 30px;
+}
+
+.Main__p {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 30px 0px 0px 0px;
+}
+
+.Main__p__span {
+    color: red;
+}
