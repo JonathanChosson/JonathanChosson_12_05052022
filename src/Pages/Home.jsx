@@ -9,14 +9,14 @@ const Home = () => {
 
     useEffect(() => {
         setUserId(18)
-    }, [])
+    }, [userId])
 
     return (
         <div>
             <Header></Header>
             <div className="Home__center">
                 <VerticalNavBar></VerticalNavBar>
-                <Main userId={userId}></Main>
+                {<Main userId={userId}></Main>}
             </div>
         </div>
     )

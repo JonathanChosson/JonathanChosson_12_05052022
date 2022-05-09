@@ -1,5 +1,7 @@
 .Main {
     margin-left: 30px;
+    margin-right: 30px;
+    width: 100%;
 }
 
 .Main__p {
@@ -10,4 +12,12 @@
 
 .Main__p__span {
     color: red;
+}
+
+.Main__chart {
+    width: 100%;
+}
+
+.Main__chart__left {
+    width: 70%;
 }

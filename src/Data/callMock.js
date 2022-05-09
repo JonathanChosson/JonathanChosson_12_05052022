@@ -10,11 +10,11 @@ export async function callMock(callType, id) {
     let route = callType
     route += id
     console.log(route)
-    let dataReturn
+    let dataReturn = []
     switch (route) {
         case '/user/18':
             await axios.get('mock_infoUser.JSON').then((resp) => {
-                dataReturn = resp.data.data
+                dataReturn = [resp.data.data]
             })
             break
         default:
