@@ -6,8 +6,14 @@ import VerticalNavBar from '../Components/VerticalNavBar'
 
 const Home = () => {
     const [userId, setUserId] = useState()
-
+    /**
+     * Choose here 'mock' or 'prod' environment
+     */
+    const env = 'mock'
     useEffect(() => {
+        /**
+         * Choose here the id you whant to use (caution if environment is mock place 18)
+         */
         setUserId(18)
     }, [userId])
 
@@ -16,7 +22,7 @@ const Home = () => {
             <Header></Header>
             <div className="Home__center">
                 <VerticalNavBar></VerticalNavBar>
-                {<Main userId={userId}></Main>}
+                {<Main userId={userId} env={env}></Main>}
             </div>
         </div>
     )

@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { callMock } from '../Data/callMock'
 import '../Styles/Components/Main.css'
+import BarChartVue from './BarChartVue'
 
-const Main = ({ userId }) => {
+const Main = ({ userId, env }) => {
     const [userData, setUserData] = useState([])
 
     useEffect(() => {
-        callMock('/user/', userId).then((data) => setUserData(data))
-    }, [userId])
+        if (env === 'mock') {
+            callMock('/user/', userId).then((data) => setUserData(data))
+        }
+    }, [env, userId])
 
     return (
         <div className="Main">
@@ -21,7 +24,9 @@ const Main = ({ userId }) => {
             </p>
             <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
             <div className="Main__chart">
-                <div className="Main__chart__left"></div>
+                <div className="Main__chart__left">
+                    <BarChartVue userId={userId} env={env}></BarChartVue>
+                </div>
             </div>
         </div>
     )

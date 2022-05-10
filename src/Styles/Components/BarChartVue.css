@@ -1,0 +1,29 @@
+.BarChart {
+    background-color: #e7e7e7;
+    border-radius: 5px;
+    padding: 0px 20px 20px 20px;
+    position: absolute;
+    height: 290px;
+    width: 60%;
+    flex: 1 100%;
+}
+
+.BarChart__title {
+    font-weight: bold;
+    position: relative;
+    top: 31px;
+}
+
+.custom-tooltip {
+    background-color: #e60000;
+    color: white;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+    font-weight: 100;
+    padding: 4px;
+}
+
+.recharts-tooltip-wrapper {
+    left: 28px !important;
+}
