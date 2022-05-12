@@ -31,7 +31,7 @@ const Main = ({ userId, env }) => {
                     <BarChartVue userId={userId} env={env}></BarChartVue>
                     <LineChartVue userId={userId} env={env}></LineChartVue>
                     <RadarChartVue userId={userId} env={env}></RadarChartVue>
-                    <PieChartVue></PieChartVue>
+                    <PieChartVue userId={userId} env={env}></PieChartVue>
                 </div>
             </div>
         </div>
