@@ -1,0 +1,33 @@
+.Linechart {
+    width: 25%;
+    height: 196px;
+    margin-top: 20px;
+    background-color: red;
+    border-radius: 5px;
+    padding: 0px 20px 0px 20px;
+    display: flex;
+    /* position: absolute; */
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.custom-tooltip-lineChart {
+    text-align: center;
+    padding: 2px;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+.Linechart__p {
+    position: relative;
+    margin: 0px;
+    margin-bottom: -30px;
+    top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #ffffff;
+    opacity: 0.5;
+}

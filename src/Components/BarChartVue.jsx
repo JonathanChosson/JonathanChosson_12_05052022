@@ -15,14 +15,24 @@ import '../Styles/Components/BarChartVue.css'
 const BarChartVue = ({ userId, env }) => {
     const [userData, setUserData] = useState([])
 
+    /**
+     * Rename XAxis
+     * @param {number} tickItem
+     * @returns iteration of previous
+     */
     const formatXAxis = (tickItem) => {
         return tickItem + 1
     }
 
+    /**
+     * Show tooltip
+     * @param {object} param0 destructuration to get item active and payload
+     * @returns tooltip
+     */
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
             return (
-                <div className="custom-tooltip">
+                <div className="custom-tooltip-barChart">
                     <p className="kg">{`${payload[0].value}kg`}</p>
                     <p className="kcal">{`${payload[1].value}Kcal`}</p>
                 </div>
@@ -45,7 +55,7 @@ const BarChartVue = ({ userId, env }) => {
             <ResponsiveContainer height={250}>
                 <BarChart
                     data={userData}
-                    margin={{ top: 0, right: 0, left: -20, bottom: 30 }}
+                    margin={{ top: 0, right: 0, left: -20, bottom: 10 }}
                     barCategoryGap="30%"
                 >
                     <Legend

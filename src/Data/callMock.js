@@ -28,6 +28,11 @@ export async function callMock(callType, id) {
                 dataReturn = [resp.data.data.sessions]
             })
             break
+        case '/user/18/average-sessions':
+            await axios.get('./mock_averageSessionsUser.JSON').then((resp) => {
+                dataReturn = [resp.data.data.sessions]
+            })
+            break
         default:
     }
     return dataReturn

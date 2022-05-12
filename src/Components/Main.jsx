@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { callMock } from '../Data/callMock'
 import '../Styles/Components/Main.css'
 import BarChartVue from './BarChartVue'
+import LineChartVue from './LineChartVue'
+import RadioChartVue from './RadioChartVue'
 
 const Main = ({ userId, env }) => {
     const [userData, setUserData] = useState([])
@@ -26,6 +28,8 @@ const Main = ({ userId, env }) => {
             <div className="Main__chart">
                 <div className="Main__chart__left">
                     <BarChartVue userId={userId} env={env}></BarChartVue>
+                    <LineChartVue userId={userId} env={env}></LineChartVue>
+                    <RadioChartVue userId={userId} env={env}></RadioChartVue>
                 </div>
             </div>
         </div>
