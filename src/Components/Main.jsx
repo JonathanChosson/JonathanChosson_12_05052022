@@ -3,7 +3,8 @@ import { callMock } from '../Data/callMock'
 import '../Styles/Components/Main.css'
 import BarChartVue from './BarChartVue'
 import LineChartVue from './LineChartVue'
-import RadioChartVue from './RadioChartVue'
+import PieChartVue from './PieChartVue'
+import RadarChartVue from './RadarChartVue'
 
 const Main = ({ userId, env }) => {
     const [userData, setUserData] = useState([])
@@ -29,7 +30,8 @@ const Main = ({ userId, env }) => {
                 <div className="Main__chart__left">
                     <BarChartVue userId={userId} env={env}></BarChartVue>
                     <LineChartVue userId={userId} env={env}></LineChartVue>
-                    <RadioChartVue userId={userId} env={env}></RadioChartVue>
+                    <RadarChartVue userId={userId} env={env}></RadarChartVue>
+                    <PieChartVue></PieChartVue>
                 </div>
             </div>
         </div>

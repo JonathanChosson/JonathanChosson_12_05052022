@@ -13,7 +13,15 @@ import { callMock } from '../Data/callMock'
 import '../Styles/Components/BarChartVue.css'
 
 const BarChartVue = ({ userId, env }) => {
-    const [userData, setUserData] = useState([])
+    const [userDataBar, setUserDataBar] = useState([])
+
+    useEffect(() => {
+        if (env === 'mock') {
+            callMock('/activity', userId).then((data) =>
+                setUserDataBar(data[0])
+            )
+        }
+    }, [env, userId])
 
     /**
      * Rename XAxis
@@ -41,12 +49,6 @@ const BarChartVue = ({ userId, env }) => {
         return null
     }
 
-    useEffect(() => {
-        if (env === 'mock') {
-            callMock('/activity', userId).then((data) => setUserData(data[0]))
-        }
-    }, [env, userId])
-
     return (
         <div className="BarChart">
             <div className="BarChart__title">
@@ -54,7 +56,7 @@ const BarChartVue = ({ userId, env }) => {
             </div>
             <ResponsiveContainer height={250}>
                 <BarChart
-                    data={userData}
+                    data={userDataBar}
                     margin={{ top: 0, right: 0, left: -20, bottom: 10 }}
                     barCategoryGap="30%"
                 >

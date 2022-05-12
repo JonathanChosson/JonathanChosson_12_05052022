@@ -33,6 +33,11 @@ export async function callMock(callType, id) {
                 dataReturn = [resp.data.data.sessions]
             })
             break
+        case '/user/18/activities':
+            await axios.get('./mock_performanceUser.JSON').then((resp) => {
+                dataReturn = [resp.data.data.data]
+            })
+            break
         default:
     }
     return dataReturn
