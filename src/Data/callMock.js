@@ -40,7 +40,6 @@ export async function callMock(callType, id) {
             break
         case '/user/18/today-score':
             await axios.get('./mock_infoUser.JSON').then((resp) => {
-                console.log(resp.data.data.score)
                 dataReturn = [
                     [
                         { name: 'score', value: resp.data.data.score },

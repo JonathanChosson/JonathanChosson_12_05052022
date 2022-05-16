@@ -5,6 +5,7 @@ import BarChartVue from './BarChartVue'
 import LineChartVue from './LineChartVue'
 import PieChartVue from './PieChartVue'
 import RadarChartVue from './RadarChartVue'
+import FrameInfos from './FrameInfos'
 
 const Main = ({ userId, env }) => {
     const [userData, setUserData] = useState([])
@@ -14,6 +15,10 @@ const Main = ({ userId, env }) => {
             callMock('/user/', userId).then((data) => setUserData(data))
         }
     }, [env, userId])
+
+    function getKeyByValue(object, value) {
+        return Object.keys(object).find((key) => object[key] === value)
+    }
 
     return (
         <div className="Main">
@@ -32,6 +37,26 @@ const Main = ({ userId, env }) => {
                     <LineChartVue userId={userId} env={env}></LineChartVue>
                     <RadarChartVue userId={userId} env={env}></RadarChartVue>
                     <PieChartVue userId={userId} env={env}></PieChartVue>
+                </div>
+                <div className="Main__chart__right">
+                    {userData[0]
+                        ? Object.values(userData[0].keyData).map(
+                              (cat, index) => (
+                                  //   console.log(
+                                  //       getKeyByValue(userData[0].keyData, cat),
+                                  //       cat
+                                  //   )
+                                  <FrameInfos
+                                      key={index}
+                                      type={getKeyByValue(
+                                          userData[0].keyData,
+                                          cat
+                                      )}
+                                      data={cat}
+                                  ></FrameInfos>
+                              )
+                          )
+                        : ''}
                 </div>
             </div>
         </div>

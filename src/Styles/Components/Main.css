@@ -16,6 +16,7 @@
 
 .Main__chart {
     width: 100%;
+    display: flex;
 }
 
 .Main__chart__left {
@@ -24,4 +25,13 @@
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
+}
+
+.Main__chart__right {
+    width: 20%;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
 }

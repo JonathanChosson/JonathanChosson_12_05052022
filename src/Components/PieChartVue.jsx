@@ -14,6 +14,22 @@ const PieChartVue = ({ env, userId }) => {
         }
     }, [env, userId])
 
+    const CustomLegend = ({ payload }) => {
+        if (payload) {
+            return (
+                <div className="Pie__legend">
+                    <p className="Pie__legend__p Pie__percent">{`${
+                        payload[0].payload.value * 100
+                    }%`}</p>
+                    <p className="Pie__legend__p">
+                        de votre <br /> objectif
+                    </p>
+                </div>
+            )
+        }
+        return null
+    }
+
     return (
         <div className="PieChartVue">
             <ResponsiveContainer width="100%" height="100%">
@@ -22,8 +38,8 @@ const PieChartVue = ({ env, userId }) => {
                         data={userDataPie}
                         startAngle={90}
                         endAngle={450}
-                        innerRadius={90}
-                        outerRadius={100}
+                        innerRadius={70}
+                        outerRadius={80}
                         cornerRadius={10}
                         paddingAngle={5}
                         dataKey="value"
@@ -33,7 +49,7 @@ const PieChartVue = ({ env, userId }) => {
                         <Cell fill={'transparent'} stroke={'transparent'} />
                     </Pie>
                     <Pie
-                        outerRadius={'90'}
+                        outerRadius={'70'}
                         fill={'#FFFFFF'}
                         data={[{ name: 'background', value: 100 }]}
                         dataKey="value"
@@ -41,7 +57,7 @@ const PieChartVue = ({ env, userId }) => {
                     <Legend
                         verticalAlign="middle"
                         align="center"
-                        // content={CustomLegend}
+                        content={CustomLegend}
                     />
                 </PieChart>
             </ResponsiveContainer>
