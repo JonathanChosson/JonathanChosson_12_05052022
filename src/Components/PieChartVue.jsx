@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { callMock } from '../Data/callMock'
+import { callAPI } from '../Data/callAPI'
 import { PieChart, Pie, Legend, Cell, ResponsiveContainer } from 'recharts'
 import '../Styles/Components/PieChartVue.css'
 
@@ -17,6 +18,10 @@ const PieChartVue = ({ env, userId }) => {
     useEffect(() => {
         if (env === 'mock') {
             callMock('/today-score', userId).then((data) =>
+                setUserDataPie(data[0])
+            )
+        } else if (env === 'prod') {
+            callAPI('/today-score', userId).then((data) =>
                 setUserDataPie(data[0])
             )
         }

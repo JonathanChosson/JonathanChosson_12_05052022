@@ -11,6 +11,7 @@ import {
     ResponsiveContainer,
 } from 'recharts'
 import { callMock } from '../Data/callMock'
+import { callAPI } from '../Data/callAPI'
 import '../Styles/Components/BarChartVue.css'
 
 /**
@@ -28,6 +29,8 @@ const BarChartVue = ({ userId, env }) => {
             callMock('/activity', userId).then((data) =>
                 setUserDataBar(data[0])
             )
+        } else if (env === 'prod') {
+            callAPI('/activity', userId).then((data) => setUserDataBar(data[0]))
         }
     }, [env, userId])
 

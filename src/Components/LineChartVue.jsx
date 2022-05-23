@@ -9,6 +9,7 @@ import {
     ResponsiveContainer,
 } from 'recharts'
 import { callMock } from '../Data/callMock'
+import { callAPI } from '../Data/callAPI'
 import '../Styles/Components/LineChart.css'
 
 /**
@@ -24,6 +25,10 @@ const LineChartVue = ({ userId, env }) => {
     useEffect(() => {
         if (env === 'mock') {
             callMock('/average-sessions', userId).then((data) =>
+                setUserData(data[0])
+            )
+        } else if (env === 'prod') {
+            callAPI('/average-sessions', userId).then((data) =>
                 setUserData(data[0])
             )
         }

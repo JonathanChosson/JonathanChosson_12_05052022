@@ -10,6 +10,7 @@ import {
 } from 'recharts'
 import { callMock } from '../Data/callMock'
 import '../Styles/Components/RadarChartVue.css'
+import { callAPI } from '../Data/callAPI'
 
 /**
  * Display the Radar chart component
@@ -20,10 +21,13 @@ import '../Styles/Components/RadarChartVue.css'
  */
 const RadarChartVue = ({ userId, env }) => {
     const [userDataRadar, setUserDataRadar] = useState([])
-
     useEffect(() => {
         if (env === 'mock') {
-            callMock('/activities', userId).then((data) =>
+            callMock('/performance', userId).then((data) =>
+                setUserDataRadar(data[0])
+            )
+        } else if (env === 'prod') {
+            callAPI('/performance', userId).then((data) =>
                 setUserDataRadar(data[0])
             )
         }

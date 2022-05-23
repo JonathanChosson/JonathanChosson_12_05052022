@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { callMock } from '../Data/callMock'
+import { callAPI } from '../Data/callAPI'
 import '../Styles/Components/Main.css'
 import BarChartVue from './BarChartVue'
 import LineChartVue from './LineChartVue'
@@ -21,6 +22,8 @@ const Main = ({ userId, env }) => {
     useEffect(() => {
         if (env === 'mock') {
             callMock('/user/', userId).then((data) => setUserData(data))
+        } else if (env === 'prod') {
+            callAPI('/user/', userId).then((data) => setUserData(data))
         }
     }, [env, userId])
 

@@ -1,3 +1,20 @@
 .Home__center {
     display: flex;
 }
+
+.Home__center--select {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home__button {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: brown;
+    padding: 5px;
+    cursor: pointer;
+}
