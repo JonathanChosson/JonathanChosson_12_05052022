@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import {
     BarChart,
     CartesianGrid,
@@ -29,32 +30,6 @@ const BarChartVue = ({ userId, env }) => {
             )
         }
     }, [env, userId])
-
-    /**
-     * @function formatXAxis
-     * @param {number} tickItem actual iteration
-     * @returns {number} iteration of previous
-     */
-    const formatXAxis = (tickItem) => {
-        return tickItem + 1
-    }
-
-    /**
-     * @function CustomTooltip
-     * @param {object} param0 destructuration to get item active and payload
-     * @returns {objbect} Dom custom tooltip
-     */
-    const CustomTooltip = ({ active, payload }) => {
-        if (active && payload && payload.length) {
-            return (
-                <div className="custom-tooltip-barChart">
-                    <p className="kg">{`${payload[0].value}kg`}</p>
-                    <p className="kcal">{`${payload[1].value}Kcal`}</p>
-                </div>
-            )
-        }
-        return null
-    }
 
     return (
         <div className="BarChart">
@@ -116,6 +91,46 @@ const BarChartVue = ({ userId, env }) => {
             </ResponsiveContainer>
         </div>
     )
+}
+
+/**
+ * @function formatXAxis
+ * @param {number} tickItem actual iteration
+ * @returns {number} iteration of previous
+ */
+const formatXAxis = (tickItem) => {
+    return tickItem + 1
+}
+
+/**
+ * @function CustomTooltip
+ * @param {object} param0 destructuration to get item active and payload
+ * @returns {objbect} Dom custom tooltip
+ */
+const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+        return (
+            <div className="custom-tooltip-barChart">
+                <p className="kg">{`${payload[0].value}kg`}</p>
+                <p className="kcal">{`${payload[1].value}Kcal`}</p>
+            </div>
+        )
+    }
+    return null
+}
+
+BarChartVue.propTypes = {
+    userId: PropTypes.number,
+    env: PropTypes.string,
+}
+
+formatXAxis.propTypes = {
+    tickItem: PropTypes.number,
+}
+
+CustomTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array,
 }
 
 export default BarChartVue

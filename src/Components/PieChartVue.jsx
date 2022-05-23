@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import { callMock } from '../Data/callMock'
 import { PieChart, Pie, Legend, Cell, ResponsiveContainer } from 'recharts'
 import '../Styles/Components/PieChartVue.css'
@@ -20,27 +21,6 @@ const PieChartVue = ({ env, userId }) => {
             )
         }
     }, [env, userId])
-
-    /**
-     * @function CustomLegend
-     * @param {object} param0
-     * @returns {object} the legend customized
-     */
-    const CustomLegend = ({ payload }) => {
-        if (payload) {
-            return (
-                <div className="Pie__legend">
-                    <p className="Pie__legend__p Pie__percent">{`${
-                        payload[0].payload.value * 100
-                    }%`}</p>
-                    <p className="Pie__legend__p">
-                        de votre <br /> objectif
-                    </p>
-                </div>
-            )
-        }
-        return null
-    }
 
     return (
         <div className="PieChartVue">
@@ -75,6 +55,36 @@ const PieChartVue = ({ env, userId }) => {
             </ResponsiveContainer>
         </div>
     )
+}
+
+/**
+ * @function CustomLegend
+ * @param {object} param0
+ * @returns {object} the legend customized
+ */
+const CustomLegend = ({ payload }) => {
+    if (payload) {
+        return (
+            <div className="Pie__legend">
+                <p className="Pie__legend__p Pie__percent">{`${
+                    payload[0].payload.value * 100
+                }%`}</p>
+                <p className="Pie__legend__p">
+                    de votre <br /> objectif
+                </p>
+            </div>
+        )
+    }
+    return null
+}
+
+PieChartVue.propTypes = {
+    type: PropTypes.string,
+    data: PropTypes.number,
+}
+
+CustomLegend.propTypes = {
+    payload: PropTypes.array,
 }
 
 export default PieChartVue

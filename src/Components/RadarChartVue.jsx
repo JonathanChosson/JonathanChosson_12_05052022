@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import {
     RadarChart,
     PolarGrid,
@@ -27,22 +28,6 @@ const RadarChartVue = ({ userId, env }) => {
             )
         }
     }, [env, userId])
-
-    const frenchTranslation = {
-        1: 'Cardio',
-        2: 'Energie',
-        3: 'Endurance',
-        4: 'Force',
-        5: 'Vitesse',
-        6: 'Intensité',
-    }
-
-    /**
-     * @function translation
-     * @param {number} item
-     * @returns {string} Translate the kind of performance
-     */
-    const translation = (item) => frenchTranslation[item]
 
     return (
         <div className="RadioChartVue">
@@ -75,6 +60,31 @@ const RadarChartVue = ({ userId, env }) => {
             </ResponsiveContainer>
         </div>
     )
+}
+
+const frenchTranslation = {
+    1: 'Cardio',
+    2: 'Energie',
+    3: 'Endurance',
+    4: 'Force',
+    5: 'Vitesse',
+    6: 'Intensité',
+}
+
+/**
+ * @function translation
+ * @param {number} item
+ * @returns {string} Translate the kind of performance
+ */
+const translation = (item) => frenchTranslation[item]
+
+RadarChartVue.propTypes = {
+    type: PropTypes.string,
+    data: PropTypes.number,
+}
+
+translation.propTypes = {
+    item: PropTypes.number,
 }
 
 export default RadarChartVue

@@ -13,6 +13,7 @@ const Home = () => {
     useEffect(() => {
         /**
          * Choose here the id you whant to use (caution if environment is mock place 18)
+         * the beta of application have 2 UserId the 18 and 12
          */
         setUserId(18)
     }, [userId])

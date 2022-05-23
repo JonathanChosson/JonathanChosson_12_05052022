@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import {
     LineChart,
     Line,
@@ -27,31 +28,6 @@ const LineChartVue = ({ userId, env }) => {
             )
         }
     }, [env, userId])
-
-    const daysWeek = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' }
-
-    /**
-     * @function formatDay
-     * @param {number} item
-     * @returns {string} return the Format legend with letter of day
-     */
-    const formatDay = (item) => daysWeek[item]
-
-    /**
-     * @function CustomTooltip
-     * @param {object} param0 Information of object was mouseover
-     * @returns {object} Dom Object with good format to Customise the tooltip
-     */
-    const CustomTooltip = ({ active, payload }) => {
-        if (active && payload && payload.length) {
-            return (
-                <div className="custom-tooltip-lineChart">
-                    <p className="min">{`${payload[0].value} min`}</p>
-                </div>
-            )
-        }
-        return null
-    }
 
     return (
         <div className="Linechart">
@@ -98,6 +74,45 @@ const LineChartVue = ({ userId, env }) => {
             </ResponsiveContainer>
         </div>
     )
+}
+
+const daysWeek = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' }
+
+/**
+ * @function formatDay
+ * @param {number} item
+ * @returns {string} return the Format legend with letter of day
+ */
+const formatDay = (item) => daysWeek[item]
+
+/**
+ * @function CustomTooltip
+ * @param {object} param0 Information of object was mouseover
+ * @returns {object} Dom Object with good format to Customise the tooltip
+ */
+const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+        return (
+            <div className="custom-tooltip-lineChart">
+                <p className="min">{`${payload[0].value} min`}</p>
+            </div>
+        )
+    }
+    return null
+}
+
+LineChartVue.propTypes = {
+    type: PropTypes.string,
+    data: PropTypes.number,
+}
+
+formatDay.propTypes = {
+    item: PropTypes.number,
+}
+
+CustomTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array,
 }
 
 export default LineChartVue

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import { callMock } from '../Data/callMock'
 import '../Styles/Components/Main.css'
 import BarChartVue from './BarChartVue'
@@ -22,16 +23,6 @@ const Main = ({ userId, env }) => {
             callMock('/user/', userId).then((data) => setUserData(data))
         }
     }, [env, userId])
-
-    /**
-     * Return the name of the key of value in object
-     * @param {object} object full object keyData
-     * @param {number} value Value we whant the key
-     * @returns String with name of object key
-     */
-    function getKeyByValue(object, value) {
-        return Object.keys(object).find((key) => object[key] === value)
-    }
 
     return (
         <div className="Main">
@@ -75,6 +66,26 @@ const Main = ({ userId, env }) => {
             </div>
         </div>
     )
+}
+
+/**
+ * Return the name of the key of value in object
+ * @param {object} object full object keyData
+ * @param {number} value Value we whant the key
+ * @returns String with name of object key
+ */
+function getKeyByValue(object, value) {
+    return Object.keys(object).find((key) => object[key] === value)
+}
+
+Main.propTypes = {
+    type: PropTypes.string,
+    data: PropTypes.number,
+}
+
+getKeyByValue.propTypes = {
+    object: PropTypes.object,
+    value: PropTypes.number,
 }
 
 export default Main
