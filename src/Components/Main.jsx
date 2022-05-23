@@ -7,6 +7,13 @@ import PieChartVue from './PieChartVue'
 import RadarChartVue from './RadarChartVue'
 import FrameInfos from './FrameInfos'
 
+/**
+ * Display the main component
+ * @component
+ * @param {number} userId the id of user
+ * @param {string} env the environment
+ * @returns {reactElement}
+ */
 const Main = ({ userId, env }) => {
     const [userData, setUserData] = useState([])
 
@@ -20,7 +27,7 @@ const Main = ({ userId, env }) => {
      * Return the name of the key of value in object
      * @param {object} object full object keyData
      * @param {number} value Value we whant the key
-     * @returns
+     * @returns String with name of object key
      */
     function getKeyByValue(object, value) {
         return Object.keys(object).find((key) => object[key] === value)

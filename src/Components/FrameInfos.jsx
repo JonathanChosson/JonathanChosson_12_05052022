@@ -5,12 +5,19 @@ import proteins from '../Assets/protein.png'
 import carbonate from '../Assets/carbonate.png'
 import lipids from '../Assets/lipids.png'
 
+/**
+ * Display frame information component
+ * @component
+ * @param {string} type the kind of information
+ * @param {number} data the value of kind
+ * @returns {reactElement}
+ */
 const FrameInfos = ({ type, data }) => {
     /**
-     * Format the return for display good information
+     * @function formatReturn
      * @param {string} type type of data send
      * @param {number} data quantity of data
-     * @returns
+     * @returns {object} Format the return for display good information
      */
     function formatReturn(type, data) {
         if (type === 'calorieCount') {

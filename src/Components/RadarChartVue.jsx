@@ -10,6 +10,13 @@ import {
 import { callMock } from '../Data/callMock'
 import '../Styles/Components/RadarChartVue.css'
 
+/**
+ * Display the Radar chart component
+ * @component
+ * @param {number} userId the id of user
+ * @param {string} env the environment
+ * @returns {reactElement}
+ */
 const RadarChartVue = ({ userId, env }) => {
     const [userDataRadar, setUserDataRadar] = useState([])
 
@@ -31,9 +38,9 @@ const RadarChartVue = ({ userId, env }) => {
     }
 
     /**
-     * Translate the kind of performance
+     * @function translation
      * @param {number} item
-     * @returns the translation
+     * @returns {string} Translate the kind of performance
      */
     const translation = (item) => frenchTranslation[item]
 

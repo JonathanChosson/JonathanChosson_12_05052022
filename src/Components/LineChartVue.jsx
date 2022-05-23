@@ -10,6 +10,13 @@ import {
 import { callMock } from '../Data/callMock'
 import '../Styles/Components/LineChart.css'
 
+/**
+ * Display the Line chart component
+ * @component
+ * @param {number} userId the id of user
+ * @param {string} env the environment
+ * @returns {reactElement}
+ */
 const LineChartVue = ({ userId, env }) => {
     const [userData, setUserData] = useState([])
 
@@ -24,16 +31,16 @@ const LineChartVue = ({ userId, env }) => {
     const daysWeek = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' }
 
     /**
-     * Format legend with letter of day
+     * @function formatDay
      * @param {number} item
-     * @returns return the letter of the day
+     * @returns {string} return the Format legend with letter of day
      */
     const formatDay = (item) => daysWeek[item]
 
     /**
-     * Customise the tooltip
+     * @function CustomTooltip
      * @param {object} param0 Information of object was mouseover
-     * @returns
+     * @returns {object} Dom Object with good format to Customise the tooltip
      */
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {

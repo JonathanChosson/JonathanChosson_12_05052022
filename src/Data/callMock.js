@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 /**
- * @function callMock service who fetch the Mock
+ * @function
  * @param {string} callType routes where called
  * @param {id} id id of user
  * @returns {object} data of call API

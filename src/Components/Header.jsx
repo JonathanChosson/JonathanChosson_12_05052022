@@ -2,6 +2,11 @@ import React from 'react'
 import logo from '../Assets/logo.png'
 import '../Styles/Components/Header.css'
 
+/**
+ * Display the Header component
+ * @component
+ * @returns {reactElement}
+ */
 const Header = () => {
     return (
         <div className="Header">

@@ -3,6 +3,13 @@ import { callMock } from '../Data/callMock'
 import { PieChart, Pie, Legend, Cell, ResponsiveContainer } from 'recharts'
 import '../Styles/Components/PieChartVue.css'
 
+/**
+ * Display the Pie chart component
+ * @component
+ * @param {number} userId the id of user
+ * @param {string} env the environment
+ * @returns {reactElement}
+ */
 const PieChartVue = ({ env, userId }) => {
     const [userDataPie, setUserDataPie] = useState([])
 
@@ -15,9 +22,9 @@ const PieChartVue = ({ env, userId }) => {
     }, [env, userId])
 
     /**
-     * Customize the legend
+     * @function CustomLegend
      * @param {object} param0
-     * @returns the legend customized
+     * @returns {object} the legend customized
      */
     const CustomLegend = ({ payload }) => {
         if (payload) {

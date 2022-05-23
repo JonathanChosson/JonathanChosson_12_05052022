@@ -5,6 +5,11 @@ import nage from '../Assets/nage.png'
 import velo from '../Assets/velo.png'
 import muscu from '../Assets/muscu.png'
 
+/**
+ * Display the Vertical nav bar component
+ * @component
+ * @returns {reactElement}
+ */
 const VerticalNavBar = () => {
     return (
         <div className="VerticalNavBar">

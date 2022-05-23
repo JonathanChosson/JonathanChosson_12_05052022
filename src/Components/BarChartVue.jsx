@@ -12,6 +12,13 @@ import {
 import { callMock } from '../Data/callMock'
 import '../Styles/Components/BarChartVue.css'
 
+/**
+ * Display the Bar chart component
+ * @component
+ * @param {number} userId the id of user
+ * @param {string} env the environment
+ * @returns {reactElement}
+ */
 const BarChartVue = ({ userId, env }) => {
     const [userDataBar, setUserDataBar] = useState([])
 
@@ -24,18 +31,18 @@ const BarChartVue = ({ userId, env }) => {
     }, [env, userId])
 
     /**
-     * Rename XAxis
-     * @param {number} tickItem
-     * @returns iteration of previous
+     * @function formatXAxis
+     * @param {number} tickItem actual iteration
+     * @returns {number} iteration of previous
      */
     const formatXAxis = (tickItem) => {
         return tickItem + 1
     }
 
     /**
-     * Show tooltip
+     * @function CustomTooltip
      * @param {object} param0 destructuration to get item active and payload
-     * @returns tooltip
+     * @returns {objbect} Dom custom tooltip
      */
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
