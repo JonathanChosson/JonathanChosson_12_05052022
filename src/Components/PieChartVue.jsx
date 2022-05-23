@@ -14,6 +14,11 @@ const PieChartVue = ({ env, userId }) => {
         }
     }, [env, userId])
 
+    /**
+     * Customize the legend
+     * @param {object} param0
+     * @returns the legend customized
+     */
     const CustomLegend = ({ payload }) => {
         if (payload) {
             return (

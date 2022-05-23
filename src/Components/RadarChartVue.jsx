@@ -30,6 +30,11 @@ const RadarChartVue = ({ userId, env }) => {
         6: 'Intensité',
     }
 
+    /**
+     * Translate the kind of performance
+     * @param {number} item
+     * @returns the translation
+     */
     const translation = (item) => frenchTranslation[item]
 
     return (

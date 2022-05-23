@@ -22,8 +22,19 @@ const LineChartVue = ({ userId, env }) => {
     }, [env, userId])
 
     const daysWeek = { 1: 'L', 2: 'M', 3: 'M', 4: 'J', 5: 'V', 6: 'S', 7: 'D' }
+
+    /**
+     * Format legend with letter of day
+     * @param {number} item
+     * @returns return the letter of the day
+     */
     const formatDay = (item) => daysWeek[item]
 
+    /**
+     * Customise the tooltip
+     * @param {object} param0 Information of object was mouseover
+     * @returns
+     */
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
             return (

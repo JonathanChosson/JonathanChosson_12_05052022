@@ -16,6 +16,12 @@ const Main = ({ userId, env }) => {
         }
     }, [env, userId])
 
+    /**
+     * Return the name of the key of value in object
+     * @param {object} object full object keyData
+     * @param {number} value Value we whant the key
+     * @returns
+     */
     function getKeyByValue(object, value) {
         return Object.keys(object).find((key) => object[key] === value)
     }
@@ -44,7 +50,8 @@ const Main = ({ userId, env }) => {
                               (cat, index) => (
                                   //   console.log(
                                   //       getKeyByValue(userData[0].keyData, cat),
-                                  //       cat
+                                  //       cat,
+                                  //       userData[0].keyData
                                   //   )
                                   <FrameInfos
                                       key={index}

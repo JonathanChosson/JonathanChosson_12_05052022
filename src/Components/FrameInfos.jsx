@@ -6,6 +6,12 @@ import carbonate from '../Assets/carbonate.png'
 import lipids from '../Assets/lipids.png'
 
 const FrameInfos = ({ type, data }) => {
+    /**
+     * Format the return for display good information
+     * @param {string} type type of data send
+     * @param {number} data quantity of data
+     * @returns
+     */
     function formatReturn(type, data) {
         if (type === 'calorieCount') {
             return (
