@@ -14,16 +14,23 @@
 This project, called frontend, is to be cloned and launched locally.
 You could use the backend, or the mock see instruction below
 
+## Documentation
+
+You can read documentation <a href="https://jonathanchosson.github.io/JonathanChosson_12_05052022/doc/" target="_blank">HERE</a>
+
 ## Installation
+
 I recommand you to use VS Code
 
 ## Prerequisite
-    NodeJS  
+
+    NodeJS
     yarn
     NPM
     Docker (recommanded)
 
-## Dependencies: 
+## Dependencies:
+
     axios: 0.27.2,
     prop-types: 15.8.1,
     react: 18.0.0,
@@ -34,10 +41,11 @@ I recommand you to use VS Code
     web-vitals: 2.1.4,
     better-docs: 2.7.2,
     jsdoc: 3.6.10
-  
 
 ## How to launched it locally ?
+
 ### Docker Method (Recommanded)
+
 Go to the cloned repository on your computer with bash :
 
 ```
@@ -50,10 +58,10 @@ Launch the docker compose :
 $ docker-compose up --build -d
 ```
 
-The project is on  this adress : http://localhost:8080/
-
+The project is on this adress : http://localhost:8080/
 
 ## Launch Manually (not-recommanded)
+
 ### FrontEnd with mock :
 
 Go to the cloned repository on your computer with bash :
@@ -74,7 +82,8 @@ Start your local server :
 ```
 $ yarn start
 ```
-The project is on  this adress : http://localhost:8080/
+
+The project is on this adress : http://localhost:8080/
 
 ### FrontEnd with API :
 
@@ -89,7 +98,7 @@ install the package (describe in `package.json`) :
 
 ```
 $ npm install
- OR 
+ OR
 $ yarn install
 ```
 
@@ -98,7 +107,8 @@ Start your local server :
 ```
 $ yarn dev
 ```
-The project is on  this adress : http://localhost:8080/
+
+The project is on this adress : http://localhost:8080/
 
 <img src='https://img.shields.io/badge/Autor-Chosson Jonathan-blue' />
 
