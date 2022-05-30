@@ -1,8 +1,12 @@
-FROM node:lts-alpine
-
+FROM node
 ADD . /app/
 WORKDIR /app
+COPY package.json /app
 
-RUN yarn
+RUN npm install
+
+COPY . /app
 
 EXPOSE 3000
+
+CMD npm start

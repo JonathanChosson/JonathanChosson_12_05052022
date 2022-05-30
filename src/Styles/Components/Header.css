@@ -9,6 +9,10 @@
     box-shadow: 0px 0px 5px 0px #000000;
 }
 
+.header, a{
+    text-decoration: none;
+}
+
 .Header__logo {
     display: flex;
     justify-content: center;

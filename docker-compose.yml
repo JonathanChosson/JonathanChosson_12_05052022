@@ -1,0 +1,22 @@
+# Define the services/containers to be run
+services:
+  frontend: #name of the first service
+    build: ./ # specify the directory of the Dockerfile
+    ports:
+      - "8080:8080" # specify port forewarding
+    container_name: front-container
+    restart: always
+    volumes:
+      - images:/app/front
+
+  backend: #name of the second service
+    build: P9-front-end-dashboard-master # specify the directory of the Dockerfile
+    ports:
+      - "3000:3000" #specify ports forwarding
+    container_name: back-container
+    restart: always 
+    volumes:
+      - images:/app/back
+
+volumes:
+  images:

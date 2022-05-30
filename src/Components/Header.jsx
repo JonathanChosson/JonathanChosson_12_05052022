@@ -10,10 +10,10 @@ import '../Styles/Components/Header.css'
 const Header = () => {
     return (
         <div className="Header">
-            <div className="Header__logo">
+            <a href='./'><div className="Header__logo">
                 <img src={logo} alt="SportSee" className="Header__logo__img" />
                 <p className="Header__logo__p">SportSee</p>
-            </div>
+            </div></a>
             <p className="Header__p">Accueil</p>
             <p className="Header__p">Profil</p>
             <p className="Header__p">Réglage</p>
