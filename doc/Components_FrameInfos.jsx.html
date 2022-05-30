@@ -27,6 +27,7 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from 'react'
+import PropTypes from 'prop-types'
 import '../Styles/Components/FrameInfos.css'
 import calories from '../Assets/calories.png'
 import proteins from '../Assets/protein.png'
@@ -41,67 +42,77 @@ import lipids from '../Assets/lipids.png'
  * @returns {reactElement}
  */
 const FrameInfos = ({ type, data }) => {
-    /**
-     * @function formatReturn
-     * @param {string} type type of data send
-     * @param {number} data quantity of data
-     * @returns {object} Format the return for display good information
-     */
-    function formatReturn(type, data) {
-        if (type === 'calorieCount') {
-            return (
-                &lt;div className="FrameInfos">
-                    &lt;div className="FrameInfos__img calories">
-                        &lt;img src={calories} alt="Calories" />
-                    &lt;/div>
-                    &lt;div className="FrameInfos__infos">
-                        &lt;p className="FrameInfos__infos__p--bold">{data}kCal&lt;/p>
-                        &lt;p className="FrameInfos__infos__p">Calories&lt;/p>
-                    &lt;/div>
-                &lt;/div>
-            )
-        } else if (type === 'proteinCount') {
-            return (
-                &lt;div className="FrameInfos">
-                    &lt;div className="FrameInfos__img proteins">
-                        &lt;img src={proteins} alt="Proteines" />
-                    &lt;/div>
-                    &lt;div className="FrameInfos__infos">
-                        &lt;p className="FrameInfos__infos__p--bold">{data}g&lt;/p>
-                        &lt;p className="FrameInfos__infos__p">Proteines&lt;/p>
-                    &lt;/div>
-                &lt;/div>
-            )
-        } else if (type === 'carbohydrateCount') {
-            return (
-                &lt;div className="FrameInfos">
-                    &lt;div className="FrameInfos__img carbonate">
-                        &lt;img src={carbonate} alt="Glucides" />
-                    &lt;/div>
-                    &lt;div className="FrameInfos__infos">
-                        &lt;p className="FrameInfos__infos__p--bold">{data}g&lt;/p>
-                        &lt;p className="FrameInfos__infos__p">Glucides&lt;/p>
-                    &lt;/div>
-                &lt;/div>
-            )
-        } else if (type === 'lipidCount') {
-            return (
-                &lt;div className="FrameInfos">
-                    &lt;div className="FrameInfos__img lipids">
-                        &lt;img src={lipids} alt="Lipides" />
-                    &lt;/div>
-                    &lt;div className="FrameInfos__infos">
-                        &lt;p className="FrameInfos__infos__p--bold">{data}g&lt;/p>
-                        &lt;p className="FrameInfos__infos__p">Lipides&lt;/p>
-                    &lt;/div>
-                &lt;/div>
-            )
-        } else {
-            return ''
-        }
-    }
-
     return &lt;div>{formatReturn(type, data)}&lt;/div>
+}
+
+/**
+ * @function formatReturn
+ * @param {string} type type of data send
+ * @param {number} data quantity of data
+ * @returns {object} Format the return for display good information
+ */
+function formatReturn(type, data) {
+    if (type === 'calorieCount') {
+        return (
+            &lt;div className="FrameInfos">
+                &lt;div className="FrameInfos__img calories">
+                    &lt;img src={calories} alt="Calories" />
+                &lt;/div>
+                &lt;div className="FrameInfos__infos">
+                    &lt;p className="FrameInfos__infos__p--bold">{data}kCal&lt;/p>
+                    &lt;p className="FrameInfos__infos__p">Calories&lt;/p>
+                &lt;/div>
+            &lt;/div>
+        )
+    } else if (type === 'proteinCount') {
+        return (
+            &lt;div className="FrameInfos">
+                &lt;div className="FrameInfos__img proteins">
+                    &lt;img src={proteins} alt="Proteines" />
+                &lt;/div>
+                &lt;div className="FrameInfos__infos">
+                    &lt;p className="FrameInfos__infos__p--bold">{data}g&lt;/p>
+                    &lt;p className="FrameInfos__infos__p">Proteines&lt;/p>
+                &lt;/div>
+            &lt;/div>
+        )
+    } else if (type === 'carbohydrateCount') {
+        return (
+            &lt;div className="FrameInfos">
+                &lt;div className="FrameInfos__img carbonate">
+                    &lt;img src={carbonate} alt="Glucides" />
+                &lt;/div>
+                &lt;div className="FrameInfos__infos">
+                    &lt;p className="FrameInfos__infos__p--bold">{data}g&lt;/p>
+                    &lt;p className="FrameInfos__infos__p">Glucides&lt;/p>
+                &lt;/div>
+            &lt;/div>
+        )
+    } else if (type === 'lipidCount') {
+        return (
+            &lt;div className="FrameInfos">
+                &lt;div className="FrameInfos__img lipids">
+                    &lt;img src={lipids} alt="Lipides" />
+                &lt;/div>
+                &lt;div className="FrameInfos__infos">
+                    &lt;p className="FrameInfos__infos__p--bold">{data}g&lt;/p>
+                    &lt;p className="FrameInfos__infos__p">Lipides&lt;/p>
+                &lt;/div>
+            &lt;/div>
+        )
+    } else {
+        return ''
+    }
+}
+
+FrameInfos.propTypes = {
+    type: PropTypes.string,
+    data: PropTypes.number,
+}
+
+formatReturn.propTypes = {
+    type: PropTypes.string,
+    data: PropTypes.number,
 }
 
 export default FrameInfos
@@ -115,13 +126,13 @@ export default FrameInfos
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="BarChartVue.html">BarChartVue</a></li><li><a href="FrameInfos.html">FrameInfos</a></li><li><a href="Header.html">Header</a></li><li><a href="LineChartVue.html">LineChartVue</a></li><li><a href="Main.html">Main</a></li><li><a href="PieChartVue.html">PieChartVue</a></li><li><a href="RadarChartVue.html">RadarChartVue</a></li><li><a href="VerticalNavBar.html">VerticalNavBar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#callMock">callMock</a></li><li><a href="global.html#CustomLegend">CustomLegend</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#formatDay">formatDay</a></li><li><a href="global.html#formatReturn">formatReturn</a></li><li><a href="global.html#formatXAxis">formatXAxis</a></li><li><a href="global.html#translation">translation</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="BarChartVue.html">BarChartVue</a></li><li><a href="FrameInfos.html">FrameInfos</a></li><li><a href="Header.html">Header</a></li><li><a href="LineChartVue.html">LineChartVue</a></li><li><a href="Main.html">Main</a></li><li><a href="PieChartVue.html">PieChartVue</a></li><li><a href="RadarChartVue.html">RadarChartVue</a></li><li><a href="VerticalNavBar.html">VerticalNavBar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#callAPI">callAPI</a></li><li><a href="global.html#callMock">callMock</a></li><li><a href="global.html#CustomLegend">CustomLegend</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#formatDay">formatDay</a></li><li><a href="global.html#formatReturn">formatReturn</a></li><li><a href="global.html#formatXAxis">formatXAxis</a></li><li><a href="global.html#getKeyByValue">getKeyByValue</a></li><li><a href="global.html#translation">translation</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon May 23 2022 14:38:12 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon May 30 2022 15:30:07 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>

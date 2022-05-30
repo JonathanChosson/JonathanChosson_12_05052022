@@ -52,32 +52,75 @@
 <li>Using an libraire to generate chart</li>
 <li>Create documentation of the project</li>
 </ul>
-<h2>Build with</h2>
-<img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/>
-<img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
-<img src="https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/>
-<img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
-<img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
 <h2>Project architecture :</h2>
 <p>This project, called frontend, is to be cloned and launched locally.
 You could use the backend, or the mock see instruction below</p>
 <h2>Installation</h2>
+<p>I recommand you to use VS Code</p>
+<h2>Prerequisite</h2>
+<pre><code>NodeJS  
+yarn
+NPM
+Docker (recommanded)
+</code></pre>
+<h2>Dependencies:</h2>
+<pre><code>axios: 0.27.2,
+prop-types: 15.8.1,
+react: 18.0.0,
+react-dom: 18.0.0,
+react-router-dom: 6.3.0,
+react-scripts: 5.0.0,
+recharts: 2.1.9,
+web-vitals: 2.1.4,
+better-docs: 2.7.2,
+jsdoc: 3.6.10
+</code></pre>
 <h2>How to launched it locally ?</h2>
+<h3>Docker Method (Recommanded)</h3>
+<p>Go to the cloned repository on your computer with bash :</p>
+<pre class="prettyprint source"><code>$ cd JonathanChosson_2_15102010
+</code></pre>
+<p>Launch the docker compose :</p>
+<pre class="prettyprint source"><code>$ docker-compose up --build -d
+</code></pre>
+<p>The project is on  this adress : http://localhost:8080/</p>
+<h2>Launch Manually (not-recommanded)</h2>
 <h3>FrontEnd with mock :</h3>
 <p>Go to the cloned repository on your computer with bash :</p>
 <pre class="prettyprint source"><code>$ cd JonathanChosson_2_15102010
 </code></pre>
 <p>install the package (describe in <code>package.json</code>) :</p>
 <pre class="prettyprint source"><code>$ npm install
-OR
-$ yarn install
+
 </code></pre>
 <p>Start your local server :</p>
 <pre class="prettyprint source"><code>$ yarn start
 </code></pre>
+<p>The project is on  this adress : http://localhost:8080/</p>
+<h3>FrontEnd with API :</h3>
+<p>Launch the front-End like previously
+go to the back-end directory :</p>
+<pre class="prettyprint source"><code>$ cd JonathanChosson_2_15102010/P9-front-end-dashboard-master
+</code></pre>
+<p>install the package (describe in <code>package.json</code>) :</p>
+<pre class="prettyprint source"><code>$ npm install
+ OR 
+$ yarn install
+</code></pre>
+<p>Start your local server :</p>
+<pre class="prettyprint source"><code>$ yarn dev
+</code></pre>
+<p>The project is on  this adress : http://localhost:8080/</p>
 <img src='https://img.shields.io/badge/Autor-Chosson Jonathan-blue' />
 <h2>Licence</h2>
-<img src='https://forthebadge.com/images/badges/open-source.svg' /></article>
+<img src='https://forthebadge.com/images/badges/open-source.svg' />
+<h2>Build with</h2>
+<img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/>
+<img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
+<img src="https://img.shields.io/badge/git%20-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/>
+<img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
+<img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
+<img alt="Docker" src="https://img.shields.io/badge/docker%20-%230db7ed.svg?&style=for-the-badge&logo=docker&logoColor=white"/></article>
     </section>
 
 
@@ -88,13 +131,13 @@ $ yarn install
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="BarChartVue.html">BarChartVue</a></li><li><a href="FrameInfos.html">FrameInfos</a></li><li><a href="Header.html">Header</a></li><li><a href="LineChartVue.html">LineChartVue</a></li><li><a href="Main.html">Main</a></li><li><a href="PieChartVue.html">PieChartVue</a></li><li><a href="RadarChartVue.html">RadarChartVue</a></li><li><a href="VerticalNavBar.html">VerticalNavBar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#callMock">callMock</a></li><li><a href="global.html#CustomLegend">CustomLegend</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#formatDay">formatDay</a></li><li><a href="global.html#formatReturn">formatReturn</a></li><li><a href="global.html#formatXAxis">formatXAxis</a></li><li><a href="global.html#translation">translation</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="BarChartVue.html">BarChartVue</a></li><li><a href="FrameInfos.html">FrameInfos</a></li><li><a href="Header.html">Header</a></li><li><a href="LineChartVue.html">LineChartVue</a></li><li><a href="Main.html">Main</a></li><li><a href="PieChartVue.html">PieChartVue</a></li><li><a href="RadarChartVue.html">RadarChartVue</a></li><li><a href="VerticalNavBar.html">VerticalNavBar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#callAPI">callAPI</a></li><li><a href="global.html#callMock">callMock</a></li><li><a href="global.html#CustomLegend">CustomLegend</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#formatDay">formatDay</a></li><li><a href="global.html#formatReturn">formatReturn</a></li><li><a href="global.html#formatXAxis">formatXAxis</a></li><li><a href="global.html#getKeyByValue">getKeyByValue</a></li><li><a href="global.html#translation">translation</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon May 23 2022 14:38:12 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon May 30 2022 15:30:07 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>
